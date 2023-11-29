@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+
+<form action="/welcome" method="POST">
+
+    <input type="hidden" name="csrf_token" value ="{{csrf_token()}}"/>
+    <h4 style="color:rgb(167, 22, 102)">Start by entering your username</h4>
+    
+    <input name="usname" required></br>
+
+    <h4 style="color:rgb(167, 22, 102)">Verification Code</h4>
+    
+    <input name ="votp" required ></br>
+    <br>
+    <input type="submit" value="Login">
+</form>
+
+<a href="{{ url_for('form_login') }}"> First time Verification</a>
+<a href="{{ url_for('welcome') }}"> First time Verification</a>
+
+{% endblock %}   
